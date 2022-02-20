@@ -1,0 +1,16 @@
+{
+  "name": "online-store-app",
+  "version": "1.0.0",
+  "description": "This is React & NodeJS application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "react"
+  ],
+  "author": "Yuriy Vedernikov <yuriy.jsx@gmail.com>",
+  "license": "ISC"
+}
