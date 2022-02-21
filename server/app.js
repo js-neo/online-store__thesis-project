@@ -16,6 +16,19 @@ if (process.env.NODE_ENV === "production") {
     console.log(chalk.bgCyanBright("Development"));
 }
 
-app.listen(PORT, (req, res) => {
-    console.log(chalk.bgGreen(`Server has been started on port ${PORT}...`));
-});
+async function start() {
+    try {
+        await mongoose.connect(config.get("mongoUri"));
+        console.log(chalk.bgGreen("MongoDB connected."));
+        app.listen(PORT, () => {
+            console.log(
+                chalk.bgGreen(`Server has been started on port ${PORT}...`)
+            );
+        });
+    } catch (error) {
+        console.log(chalk.bgRed(error.message));
+        process.exit(1);
+    }
+}
+
+start();
