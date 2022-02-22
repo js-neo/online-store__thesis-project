@@ -1,4 +1,6 @@
 {
   "port": 8080,
-  "mongoUri": "mongodb+srv://yuriy-yupiter:2-qVjyujL<*OS_tp@cluster0.6asvo.mongodb.net/online-store-app?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://yuriy-yupiter:2-qVjyujL<*OS_tp@cluster0.6asvo.mongodb.net/online-store-app?retryWrites=true&w=majority",
+  "accessSecret": "super secret from backend",
+  "refreshSecret": "super refresh key"
 }

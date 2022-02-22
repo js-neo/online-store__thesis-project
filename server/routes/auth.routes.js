@@ -12,9 +12,10 @@ const router = express.Router({ mergeParams: true });
 // 5. generate tokens
 router.post("/signUp", async (req, res) => {
     try {
-        const { email, password } = res.body;
-        const exitingUser = await User.findOne({ email });
-        if (exitingUser) {
+        const { name, email, password } = req.body;
+        console.log(name, email, password);
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
             return res.status(400).json({
                 error: {
                     message: "EMAIL_EXISTS",
@@ -25,13 +26,15 @@ router.post("/signUp", async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 12);
         const newUser = await User.create({
-            password: hashedPassword,
-            email
+            ...req.body,
+            password: hashedPassword
         });
 
         const tokens = tokenService.generate({ _id: newUser._id });
+        await tokenService.save(newUser._id, tokens.refreshToken);
         res.status(201).send({ ...tokens, userId: newUser._id });
     } catch (error) {
+        console.log("error:", error);
         res.status(500).json({
             message: "An error occurred on the server. Please try again later."
         });
