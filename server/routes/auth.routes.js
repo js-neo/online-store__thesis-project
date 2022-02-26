@@ -1,6 +1,7 @@
 const express = require("express");
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
+const { check, validationResult } = require("express-validator");
 const tokenService = require("../services/token.service");
 const router = express.Router({ mergeParams: true });
 
@@ -41,9 +42,66 @@ router.post("/signUp", async (req, res) => {
     }
 });
 
-router.post("/signInWithPassword", async (req, res) => {
-    res.json;
-});
+// validate
+// find user
+// compare hashed password
+// generate tokens
+// return data
+router.post("/signInWithPassword", [
+    check("email", "Incorrect email").normalizeEmail().isEmail(),
+    check("password", "Password cannot be empty").exists(),
+    async (req, res) => {
+        try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.status(400).json({
+                    error: {
+                        message: "INVALID_DATA",
+                        code: 400
+                    }
+                });
+            }
+
+            const { email, password } = req.body;
+            const existingUser = await User.findOne({ email });
+            if (!existingUser) {
+                return res.status(400).send({
+                    error: {
+                        message: "EMAIL_NOT_FOUND",
+                        code: 400
+                    }
+                });
+            }
+
+            const isPasswordEqual = await bcrypt.compare(
+                password,
+                existingUser.password
+            );
+            if (!isPasswordEqual) {
+                return res.status(400).send({
+                    error: {
+                        message: "INVALID_PASSWORD",
+                        code: 400
+                    }
+                });
+            }
+
+            const tokens = tokenService.generate({
+                _id: existingUser._id
+            });
+            await tokenService.save(existingUser._id, tokens.refreshToken);
+
+            return res
+                .status(200)
+                .send({ ...tokens, userId: existingUser._id });
+        } catch (error) {
+            res.status(500).json({
+                message:
+                    "An error occurred on the server. Please try again later."
+            });
+        }
+    }
+]);
 
 router.post("/token", async (req, res) => {
     res.json;
