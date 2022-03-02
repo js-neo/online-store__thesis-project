@@ -25,6 +25,35 @@ const auth = (req, res, next) => {
     }
 };
 
+const verifyAuthById = (req, res, next) => {
+    auth(req, res, () => {
+        const { userId } = req.params;
+        console.log("req.user:", req.user);
+
+        if (userId === req.user._id || req.user.isAdmin) {
+            next();
+        } else {
+            res.status(403).json({
+                message: "You don't have access"
+            });
+        }
+    });
+};
+
+const verifyIsAdmin = (req, res, next) => {
+    auth(req, res, () => {
+        if (req.user.isAdmin) {
+            next();
+        } else {
+            res.status(403).json({
+                message: "You don't have access"
+            });
+        }
+    });
+};
+
 module.exports = {
-    auth
+    auth,
+    verifyAuthById,
+    verifyIsAdmin
 };

@@ -1,10 +1,13 @@
 const express = require("express");
 const User = require("../models/User");
-const { auth } = require("../middleware/auth.middleware");
+const {
+    verifyAuthById,
+    verifyIsAdmin
+} = require("../middleware/auth.middleware");
 const bcrypt = require("bcryptjs");
 const router = express.Router({ mergeParams: true });
 
-router.patch("/:userId", auth, async (req, res) => {
+router.patch("/:userId", verifyAuthById, async (req, res) => {
     if (req.body.password) {
         req.body.password = await bcrypt.hash(req.body.password, 12);
     }
@@ -12,27 +15,37 @@ router.patch("/:userId", auth, async (req, res) => {
         const { userId } = req.params;
         console.log("req.user:", req.user);
 
-        if (userId === req.user._id) {
-            const updatedUser = await User.findByIdAndUpdate(userId, req.body, {
-                new: true
-            });
-            res.send(updatedUser);
-        } else {
-            res.status(401).json({
-                message: "Unauthorized"
-            });
-        }
+        const updatedUser = await User.findByIdAndUpdate(userId, req.body, {
+            new: true
+        });
+        res.send(updatedUser);
     } catch (error) {
         res.status(500).json({
-            message: "An error has occurred on the server.Try later."
+            message: "An error occurred on the server.Please try again later."
         });
     }
 });
 
-router.get("/", auth, async (req, res) => {
+router.delete("/:userId", verifyAuthById, async (req, res) => {
+    const { userId } = req.params;
     try {
-        console.log("req.user__get:", req.user);
-        const list = await User.find();
+        await User.findByIdAndDelete(userId);
+        req.json({
+            message: "User has been deleted"
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "An error occurred on the server.Please try again later."
+        });
+    }
+});
+
+router.get("/", verifyIsAdmin, async (req, res) => {
+    const query = req.query.new;
+    try {
+        const list = query
+            ? await User.find().sort({ _id: -1 }).limit(5)
+            : User.find();
         return res.send(list);
     } catch (error) {
         res.status(500).json({

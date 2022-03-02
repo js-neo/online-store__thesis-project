@@ -31,7 +31,10 @@ router.post("/signUp", async (req, res) => {
             password: hashedPassword
         });
 
-        const tokens = tokenService.generate({ _id: newUser._id });
+        const tokens = tokenService.generate({
+            _id: newUser._id,
+            isAdmin: newUser.isAdmin
+        });
         await tokenService.save(newUser._id, tokens.refreshToken);
         res.status(201).send({ ...tokens, userId: newUser._id });
     } catch (error) {
@@ -87,7 +90,8 @@ router.post("/signInWithPassword", [
             }
 
             const tokens = tokenService.generate({
-                _id: existingUser._id
+                _id: existingUser._id,
+                isAdmin: existingUser.isAdmin
             });
             await tokenService.save(existingUser._id, tokens.refreshToken);
 
@@ -117,7 +121,10 @@ router.post("/token", async (req, res) => {
             return res.status(401).json({ message: "Unauthorized" });
         }
 
-        const tokens = tokenService.generate({ _id: data._id });
+        const tokens = tokenService.generate({
+            _id: data._id,
+            isAdmin: data.isAdmin
+        });
         await tokenService.save(data._id, tokens.refreshToken);
 
         res.status(200).send({ ...tokens, userId: data._id });
