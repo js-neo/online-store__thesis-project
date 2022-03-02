@@ -8,10 +8,11 @@ const {
 } = require("../middleware/auth.middleware");
 
 router.post("/", auth, async (req, res) => {
-    const newCart = Cart.create({ ...req.body });
+    const newCart = await Cart.create({ ...req.body });
+    console.log("req.body", req.body);
     try {
         const savedCart = await newCart.save();
-        res.status(200).json(savedCart);
+        res.send(savedCart);
     } catch (error) {
         res.status(500).json({
             message: "An error occurred on the server. Please try again later."
@@ -38,7 +39,7 @@ router.delete("/:userId", verifyAuthById, async (req, res) => {
         const { userId } = req.params;
         await Cart.findByIdAndDelete(userId);
         res.json({
-            message: "User has been deleted"
+            message: "Cart has been deleted"
         });
     } catch (error) {
         res.status(500).json({
