@@ -30,7 +30,7 @@ router.delete("/:userId", verifyAuthById, async (req, res) => {
     const { userId } = req.params;
     try {
         await User.findByIdAndDelete(userId);
-        req.json({
+        res.json({
             message: "User has been deleted"
         });
     } catch (error) {
