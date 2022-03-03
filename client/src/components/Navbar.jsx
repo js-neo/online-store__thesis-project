@@ -4,11 +4,11 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { Badge } from "@material-ui/core";
 
 const Container = styled.div`
-  height: 60px;
+  height: 80px;
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,7 +21,7 @@ const Left = styled.div`
 `;
 
 const Language = styled.span`
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
 `;
 
@@ -35,6 +35,8 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
+  width: 200px;
+  height: 25px;
 `;
 
 const Center = styled.div`
@@ -53,7 +55,7 @@ const Right = styled.div`
 `;
 
 const MenuItem = styled.div`
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   margin-left: 25px;
 `;
@@ -66,7 +68,7 @@ const Navbar = () => {
           <Language>RU</Language>
           <SearchContainer>
             <Input />
-            <Search style={{ color: "gray", fontSize: 16 }} />
+            <Search style={{ color: "gray", fontSize: 25 }} />
           </SearchContainer>
         </Left>
         <Center>
@@ -77,7 +79,7 @@ const Navbar = () => {
           <MenuItem>SIGN IN</MenuItem>
           <MenuItem>
             <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
+              <ShoppingCartOutlined style={{ fontSize: 30 }} />
             </Badge>
           </MenuItem>
         </Right>
