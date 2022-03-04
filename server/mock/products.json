@@ -1,0 +1,134 @@
+[
+  {
+    "_id": "1",
+    "brand": "Adidas",
+    "title": "jacket",
+    "description": "test",
+    "image": "https://disk.yandex.ru/i/dYVGDgm0jE9EPg",
+    "categories": ["Adidas", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "2",
+    "brand": "Adidas",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["adidas", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "3",
+    "brand": "La Biali",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["la biali", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "4",
+    "brand": "La Biali",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["la biali", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "5",
+    "brand": "Puma",
+    "title": "jacket PORSCHE DESIGN",
+    "description": "test",
+    "image": "",
+    "categories": ["puma", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "6",
+    "brand": "Adidas",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["Adidas", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "7",
+    "brand": "Adidas",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["Adidas", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "8",
+    "brand": "Adidas",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["Adidas", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "9",
+    "brand": "Adidas",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["Adidas", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "10",
+    "brand": "Adidas",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["Adidas", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "11",
+    "brand": "Adidas",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["Adidas", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+  {
+    "_id": "12",
+    "brand": "Adidas",
+    "title": "jacket",
+    "description": "test",
+    "image": "",
+    "categories": ["Adidas", "jacket", "man"],
+    "price": 30,
+    "size": ["M", "S"],
+    "color": ["red", "grey"]
+  },
+]

@@ -32,6 +32,10 @@ const InfoContainer = styled.div`
   ${mobile({ padding: "10px" })}
 `;
 
+const Brand = styled.h1`
+  font-weight: 500;
+`;
+
 const Title = styled.h1`
   font-weight: 200;
 `;
@@ -127,7 +131,8 @@ const Product = () => {
           <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
         </ImgContainer>
         <InfoContainer>
-          <Title>Jean</Title>
+          <Brand>ADIDAS</Brand>
+          <Title>jeans</Title>
           <Desc>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
             assumenda autem distinctio dolor dolore eaque esse et,
