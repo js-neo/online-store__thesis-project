@@ -8,9 +8,11 @@ import {
   Twitter,
 } from "@material-ui/icons";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -20,7 +22,9 @@ const Left = styled.div`
   padding: 20px;
 `;
 
-const Logo = styled.h1``;
+const Logo = styled.h1`
+  ${mobile({ textAlign: "center" })}
+`;
 
 const Desc = styled.p`
   margin: 20px 0;
@@ -28,6 +32,7 @@ const Desc = styled.p`
 
 const SocialContainer = styled.div`
   display: flex;
+  ${mobile({ justifyContent: "center" })}
 `;
 
 const SocialIcon = styled.div`
@@ -40,11 +45,13 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  ${mobile({ margin: "5px" })}
 `;
 
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 
 const Title = styled.h3`
@@ -67,6 +74,7 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ backgroundColor: "#fff8f8" })}
 `;
 
 const ContactItem = styled.div`
