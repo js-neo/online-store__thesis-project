@@ -37,6 +37,7 @@ const Input = styled.input`
   border: none;
   width: 200px;
   height: 25px;
+  font-size: 20px;
 `;
 
 const Center = styled.div`
@@ -72,7 +73,7 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>Yupiter</Logo>
+          <Logo>YUPITER</Logo>
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>
