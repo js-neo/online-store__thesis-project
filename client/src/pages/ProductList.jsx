@@ -31,9 +31,7 @@ const Select = styled.select`
   margin-right: 20px;
   font-size: 20px;
 `;
-const Option = styled.option`
-  font-size: 20px;
-`;
+const Option = styled.option``;
 
 const ProductList = () => {
   return (
