@@ -25,19 +25,19 @@ export const sliderItems = [
 export const categories = [
   {
     id: 1,
-    img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/girl_in_white_dress.jpg?raw=true",
     title: "SHIRT STYLE!",
     cat: "women",
   },
   {
     id: 2,
-    img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/girl_in_dress.jpg?raw=true",
     title: "LOUNGEWEAR LOVE",
     cat: "coat",
   },
   {
     id: 3,
-    img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/girl_in_jeans.jpg?raw=true",
     title: "LIGHT JACKETS",
     cat: "jeans",
   },
