@@ -5,10 +5,20 @@
     "title": "Dress Blue Moon",
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/girl_in_black_dress.png?raw=true",
-    "categories": ["gucci", "dress", "mini"],
+    "categories": [
+      "gucci",
+      "dress",
+      "mini"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["blue", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "blue",
+      "grey"
+    ]
   },
   {
     "_id": "2",
@@ -16,119 +26,226 @@
     "title": "Dress Black Night",
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blue_dress_mini_cut.png?raw=true",
-    "categories": ["dolce & gabbana", "dress", "mini"],
+    "categories": [
+      "dolce & gabbana",
+      "dress",
+      "mini"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["black", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "black",
+      "grey"
+    ]
   },
   {
     "_id": "3",
-    "brand": "La Biali",
-    "title": "jacket",
+    "brand": "Chanel",
+    "title": "Dress",
     "description": "test",
-    "image": "",
-    "categories": ["dolce & gabbana", "dress", "mini"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/white_dress_mini.png?raw=true",
+    "categories": [
+      "chanel",
+      "dress",
+      "mini"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "white",
+      "grey"
+    ]
   },
   {
     "_id": "4",
-    "brand": "La Biali",
-    "title": "jacket",
+    "brand": "Dior",
+    "title": "Dress",
     "description": "test",
-    "image": "",
-    "categories": ["la biali", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/fluffy_white_dress_cut.png?raw=true",
+    "categories": [
+      "Dior",
+      "dress",
+      "mini"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "white",
+      "grey"
+    ]
   },
   {
     "_id": "5",
-    "brand": "Puma",
-    "title": "jacket PORSCHE DESIGN",
+    "brand": "Versace",
+    "title": "Dress",
     "description": "test",
-    "image": "",
-    "categories": ["puma", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/pink_dress_mini.png?raw=true",
+    "categories": [
+      "versace",
+      "jacket",
+      "mini"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "pink",
+      "grey"
+    ]
   },
   {
     "_id": "6",
-    "brand": "Adidas",
-    "title": "jacket",
+    "brand": "Givenchy",
+    "title": "Dress",
     "description": "test",
-    "image": "",
-    "categories": ["Adidas", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/gold_dress_mini.png?raw=true",
+    "categories": [
+      "givenchy",
+      "dress",
+      "mini"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "gold",
+      "grey"
+    ]
   },
   {
     "_id": "7",
-    "brand": "Adidas",
-    "title": "jacket",
+    "brand": "Louis Vuitton",
+    "title": "Dress Sheath",
     "description": "test",
-    "image": "",
-    "categories": ["Adidas", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/red_dress.png?raw=true",
+    "categories": [
+      "louis vuitton",
+      "dress",
+      "sheath"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "red",
+      "grey"
+    ]
   },
   {
     "_id": "8",
-    "brand": "Adidas",
-    "title": "jacket",
+    "brand": "Dior",
+    "title": "Blouse",
     "description": "test",
-    "image": "",
-    "categories": ["Adidas", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blouse_crema_white.png?raw=true",
+    "categories": [
+      "dior",
+      "blouse"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "white",
+      "grey"
+    ]
   },
   {
     "_id": "9",
-    "brand": "Adidas",
-    "title": "jacket",
+    "brand": "Gucci",
+    "title": "Blouse",
     "description": "test",
-    "image": "",
-    "categories": ["Adidas", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blouse_dark_blue.png?raw=true",
+    "categories": [
+      "gucci",
+      "blouse"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "blue",
+      "grey"
+    ]
   },
   {
     "_id": "10",
-    "brand": "Adidas",
-    "title": "jacket",
+    "brand": "Chanel",
+    "title": "Blouse",
     "description": "test",
-    "image": "",
-    "categories": ["Adidas", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blouse_light_white_cut.png?raw=true",
+    "categories": [
+      "chanel",
+      "blouse"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "white",
+      "grey"
+    ]
   },
   {
     "_id": "11",
-    "brand": "Adidas",
-    "title": "jacket",
+    "brand": "Armani",
+    "title": "Jeans",
     "description": "test",
-    "image": "",
-    "categories": ["Adidas", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/jeans_shorts_cut.png?raw=true",
+    "categories": [
+      "armani",
+      "jeans",
+      "shorts"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "blue",
+      "grey"
+    ]
   },
   {
     "_id": "12",
-    "brand": "Adidas",
-    "title": "jacket",
+    "brand": "Diesel",
+    "title": "Ripped Jeans",
     "description": "test",
-    "image": "",
-    "categories": ["Adidas", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/ripped_jeans.png?raw=true",
+    "categories": [
+      "diesel",
+      "jeans",
+      "ripped"
+    ],
     "price": 30,
-    "size": ["M", "S"],
-    "color": ["red", "grey"]
-  },
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "blue",
+      "grey"
+    ]
+  }
 ]

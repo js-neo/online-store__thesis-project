@@ -25,8 +25,8 @@ const Info = styled.div`
 const Container = styled.div`
   flex: 1;
   margin: 5px;
-  min-width: 280px;
-  height: 350px;
+  min-width: 350px;
+  height: 430px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,14 +38,14 @@ const Container = styled.div`
   }
 `;
 const Circle = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background-color: white;
   position: absolute;
 `;
 const Image = styled.img`
-  height: 75%;
+  height: 85%;
   z-index: 2;
 `;
 
@@ -70,7 +70,7 @@ const Product = ({ item }) => {
   return (
     <Container>
       <Circle />
-      <Image src={item.img} />
+      <Image src={item.image} />
       <Info>
         <Icon>
           <ShoppingCartOutlined />
