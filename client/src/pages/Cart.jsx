@@ -62,17 +62,24 @@ const Product = styled.div`
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  width: 250px;
+  height: 310px;
 `;
 
 const Image = styled.img`
-  width: 200px;
+  width: 23vh;
+  height: 30vh;
+  padding: 5px;
 `;
 
 const Details = styled.div`
+  margin-left: 30px;
   padding: 20px;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  ${mobile({ marginLeft: "0" })}
 `;
 
 const ProductBrand = styled.span``;
@@ -231,18 +238,18 @@ const Cart = () => {
             <Hr />
             <Product>
               <ProductDetail>
-                <Image src="https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/Puhovik_Helionic_sinij_FT2519_21_model.jpg?raw=true" />
+                <Image src="https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/jeans_jacket_blue.png?raw=true" />
                 <Details>
                   <ProductBrand>
-                    <b>Brand:</b> ADIDAS
+                    <b>Brand:</b> DIESEL
                   </ProductBrand>
                   <ProductName>
-                    <b>Product:</b> Jacket
+                    <b>Product:</b> Jacket Jeans
                   </ProductName>
                   <ProductId>
                     <b>ID:</b> 93813718293
                   </ProductId>
-                  <ProductColor color="grey" />
+                  <ProductColor color="blue" />
                   <ProductSize>
                     <b>Size:</b> M
                   </ProductSize>
