@@ -228,6 +228,35 @@ const Cart = () => {
                 <ProductPrice>$ 20</ProductPrice>
               </PriceDetail>
             </Product>
+            <Hr />
+            <Product>
+              <ProductDetail>
+                <Image src="https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/Puhovik_Helionic_sinij_FT2519_21_model.jpg?raw=true" />
+                <Details>
+                  <ProductBrand>
+                    <b>Brand:</b> ADIDAS
+                  </ProductBrand>
+                  <ProductName>
+                    <b>Product:</b> Jacket
+                  </ProductName>
+                  <ProductId>
+                    <b>ID:</b> 93813718293
+                  </ProductId>
+                  <ProductColor color="grey" />
+                  <ProductSize>
+                    <b>Size:</b> M
+                  </ProductSize>
+                </Details>
+              </ProductDetail>
+              <PriceDetail>
+                <ProductAmountContainer>
+                  <Add />
+                  <ProductAmount>2</ProductAmount>
+                  <Remove />
+                </ProductAmountContainer>
+                <ProductPrice>$ 40</ProductPrice>
+              </PriceDetail>
+            </Product>
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>

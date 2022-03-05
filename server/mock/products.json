@@ -4,7 +4,7 @@
     "brand": "Adidas",
     "title": "jacket",
     "description": "test",
-    "image": "https://disk.yandex.ru/i/dYVGDgm0jE9EPg",
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/Puhovik_Helionic_sinij_FT2519_21_model.jpg?raw=true",
     "categories": ["Adidas", "jacket", "man"],
     "price": 30,
     "size": ["M", "S"],
