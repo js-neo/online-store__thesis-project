@@ -1,7 +1,7 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://static.toiimg.com/photo/80212753.cms",
+    img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/pngegg%20(1).png?raw=true",
     title: "SUMMER SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "f5fafd",
