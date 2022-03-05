@@ -247,5 +247,67 @@
       "blue",
       "grey"
     ]
+  },
+  {
+    "_id": "13",
+    "brand": "Diesel",
+    "title": "Denim suit",
+    "description": "test",
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/denim_suit.png?raw=true",
+    "categories": [
+      "diesel",
+      "jeans",
+      "denim suit"
+    ],
+    "price": 30,
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "blue",
+      "grey"
+    ]
+  },
+  {
+    "_id": "14",
+    "brand": "Chanel",
+    "title": "Jacket",
+    "description": "test",
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/pink_jacket_cut.png?raw=true",
+    "categories": [
+      "chanel",
+      "jacket"
+    ],
+    "price": 30,
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "pink",
+      "grey"
+    ]
+  },
+  {
+    "_id": "15",
+    "brand": "Diesel",
+    "title": "Jacket Jeans",
+    "description": "test",
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/jeans_jacket_blue.png?raw=true",
+    "categories": [
+      "diesel",
+      "jeans",
+      "jacket"
+    ],
+    "price": 30,
+    "size": [
+      "M",
+      "S"
+    ],
+    "color": [
+      "blue",
+      "grey"
+    ]
   }
 ]
