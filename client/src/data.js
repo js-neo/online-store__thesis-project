@@ -31,7 +31,7 @@ export const categories = [
   },
   {
     id: 2,
-    img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/girl_in_dress.jpg?raw=true",
+    img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/devushka-jeans.jpg?raw=true",
     title: "LOUNGEWEAR LOVE",
     cat: "coat",
   },
