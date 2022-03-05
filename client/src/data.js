@@ -26,19 +26,19 @@ export const categories = [
   {
     id: 1,
     img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/girl_in_white_dress.jpg?raw=true",
-    title: "SHIRT STYLE!",
-    cat: "women",
+    title: "HIGH FASHION!",
+    cat: "dress",
   },
   {
     id: 2,
-    img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/devushka-jeans.jpg?raw=true",
-    title: "LOUNGEWEAR LOVE",
-    cat: "coat",
+    img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/devushka-dzhinsy.jpg?raw=true",
+    title: "DAZZLING IMAGE",
+    cat: "blouses",
   },
   {
     id: 3,
     img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/girl_in_jeans.jpg?raw=true",
-    title: "LIGHT JACKETS",
+    title: "JEANS FOREVER",
     cat: "jeans",
   },
 ];
