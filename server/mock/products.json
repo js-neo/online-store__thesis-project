@@ -1,25 +1,25 @@
 [
   {
     "_id": "1",
-    "brand": "Adidas",
-    "title": "jacket",
+    "brand": "Gucci",
+    "title": "Dress Blue Moon",
     "description": "test",
-    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/Puhovik_Helionic_sinij_FT2519_21_model.jpg?raw=true",
-    "categories": ["Adidas", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/girl_in_black_dress.png?raw=true",
+    "categories": ["gucci", "dress", "mini"],
     "price": 30,
     "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "color": ["blue", "grey"]
   },
   {
     "_id": "2",
-    "brand": "Adidas",
-    "title": "jacket",
+    "brand": "Dolce & Gabbana",
+    "title": "Dress Black Night",
     "description": "test",
-    "image": "",
-    "categories": ["adidas", "jacket", "man"],
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blue_dress_mini_cut.png?raw=true",
+    "categories": ["dolce & gabbana", "dress", "mini"],
     "price": 30,
     "size": ["M", "S"],
-    "color": ["red", "grey"]
+    "color": ["black", "grey"]
   },
   {
     "_id": "3",
@@ -27,7 +27,7 @@
     "title": "jacket",
     "description": "test",
     "image": "",
-    "categories": ["la biali", "jacket", "man"],
+    "categories": ["dolce & gabbana", "dress", "mini"],
     "price": 30,
     "size": ["M", "S"],
     "color": ["red", "grey"]
