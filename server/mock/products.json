@@ -154,7 +154,7 @@
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blouse_crema_white.png?raw=true",
     "categories": [
       "dior",
-      "blouse"
+      "blouses"
     ],
     "price": 20,
     "size": [
@@ -174,7 +174,7 @@
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blouse_dark_blue.png?raw=true",
     "categories": [
       "gucci",
-      "blouse"
+      "blouses"
     ],
     "price": 30,
     "size": [
@@ -194,7 +194,7 @@
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blouse_light_white_cut.png?raw=true",
     "categories": [
       "chanel",
-      "blouse"
+      "blouses"
     ],
     "price": 100,
     "size": [
