@@ -4,13 +4,13 @@
     "brand": "Gucci",
     "title": "Dress Blue Moon",
     "description": "test",
-    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/girl_in_black_dress.png?raw=true",
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blue_dress_mini_cut.png?raw=true",
     "categories": [
       "gucci",
       "dress",
       "mini"
     ],
-    "price": 30,
+    "price": 50,
     "size": [
       "M",
       "S"
@@ -25,13 +25,13 @@
     "brand": "Dolce & Gabbana",
     "title": "Dress Black Night",
     "description": "test",
-    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blue_dress_mini_cut.png?raw=true",
+    "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/girl_in_black_dress.png?raw=true",
     "categories": [
       "dolce & gabbana",
       "dress",
       "mini"
     ],
-    "price": 30,
+    "price": 40,
     "size": [
       "M",
       "S"
@@ -52,7 +52,7 @@
       "dress",
       "mini"
     ],
-    "price": 30,
+    "price": 70,
     "size": [
       "M",
       "S"
@@ -73,7 +73,7 @@
       "dress",
       "mini"
     ],
-    "price": 30,
+    "price": 60,
     "size": [
       "M",
       "S"
@@ -94,7 +94,7 @@
       "jacket",
       "mini"
     ],
-    "price": 30,
+    "price": 80,
     "size": [
       "M",
       "S"
@@ -115,7 +115,7 @@
       "dress",
       "mini"
     ],
-    "price": 30,
+    "price": 100,
     "size": [
       "M",
       "S"
@@ -136,7 +136,7 @@
       "dress",
       "sheath"
     ],
-    "price": 30,
+    "price": 90,
     "size": [
       "M",
       "S"
@@ -156,7 +156,7 @@
       "dior",
       "blouse"
     ],
-    "price": 30,
+    "price": 20,
     "size": [
       "M",
       "S"
@@ -196,7 +196,7 @@
       "chanel",
       "blouse"
     ],
-    "price": 30,
+    "price": 100,
     "size": [
       "M",
       "S"
@@ -217,7 +217,7 @@
       "jeans",
       "shorts"
     ],
-    "price": 30,
+    "price": 50,
     "size": [
       "M",
       "S"
@@ -238,7 +238,7 @@
       "jeans",
       "ripped"
     ],
-    "price": 30,
+    "price": 100,
     "size": [
       "M",
       "S"
@@ -259,7 +259,7 @@
       "jeans",
       "denim suit"
     ],
-    "price": 30,
+    "price": 80,
     "size": [
       "M",
       "S"
@@ -279,7 +279,7 @@
       "chanel",
       "jacket"
     ],
-    "price": 30,
+    "price": 70,
     "size": [
       "M",
       "S"
@@ -300,7 +300,7 @@
       "jeans",
       "jacket"
     ],
-    "price": 30,
+    "price": 130,
     "size": [
       "M",
       "S"
