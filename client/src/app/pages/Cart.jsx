@@ -193,7 +193,7 @@ const Cart = () => {
                         <b>Product:</b> {product.title}
                       </ProductName>
                       <ProductId>
-                        <b>ID:</b> {product._id}
+                        <b>ID:</b> {product._id.slice(0, 12)}
                       </ProductId>
                       <ProductColor color={product.color} />
                       <ProductSize>
@@ -204,10 +204,12 @@ const Cart = () => {
                   <PriceDetail>
                     <ProductAmountContainer>
                       <Add />
-                      <ProductAmount>2</ProductAmount>
+                      <ProductAmount>{product.quantity}</ProductAmount>
                       <Remove />
                     </ProductAmountContainer>
-                    <ProductPrice>$ 30</ProductPrice>
+                    <ProductPrice>
+                      {product.price * product.quantity}
+                    </ProductPrice>
                   </PriceDetail>
                 </Product>
                 <Hr />
@@ -218,7 +220,7 @@ const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -230,7 +232,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total}</SummaryItemPrice>
             </SummaryItem>
 
             <Button>CHECKOUT NOW</Button>

@@ -1,8 +1,7 @@
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
 import Product from "./pages/Product";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
+import LoginForm from "./pages/loginForm";
 import Cart from "./pages/Cart";
 import {
   BrowserRouter as Router,
@@ -10,9 +9,10 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import RegisterForm from "./pages/registerForm";
 
 const App = () => {
-  const user = true;
+  const user = false;
   return (
     <Router>
       <Switch>
@@ -28,9 +28,11 @@ const App = () => {
         <Route path="/cart">
           <Cart />
         </Route>
-        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+        <Route path="/login">
+          {user ? <Redirect to="/" /> : <LoginForm />}
+        </Route>
         <Route path="/register">
-          {user ? <Redirect to="/" /> : <Register />}
+          {user ? <Redirect to="/" /> : <RegisterForm />}
         </Route>
       </Switch>
     </Router>

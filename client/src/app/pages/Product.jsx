@@ -7,8 +7,8 @@ import Newsletter from "../components/Newsletter";
 import { Add, Remove } from "@material-ui/icons";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
-import { publicRequest } from "../services/http.servise";
-import { addProduct } from "../redux/cartRedux";
+import { publicRequest } from "../../assets/http.servise";
+import { addProduct } from "../store/cart";
 import { useDispatch } from "react-redux";
 
 const Container = styled.div``;
