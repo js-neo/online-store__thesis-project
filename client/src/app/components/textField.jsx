@@ -15,7 +15,7 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
     setShowPassword((prevState) => !prevState);
   };
   return (
-    <div className="mb-4">
+    <div className="mb-4 w-100">
       <label htmlFor={name}> {label}</label>
       <div className="input-group has-validation">
         <input
@@ -24,7 +24,7 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
           name={name}
           value={value}
           onChange={handleChange}
-          className={`${getInputClasses()} w-100`}
+          className={getInputClasses()}
         />
 
         {type === "password" && (
