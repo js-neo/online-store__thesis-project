@@ -7,9 +7,9 @@ import Newsletter from "../components/Newsletter";
 import { Add, Remove } from "@material-ui/icons";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
-import { publicRequest } from "../../assets/http.servise";
 import { addProduct } from "../store/cart";
 import { useDispatch } from "react-redux";
+import productService from "../services/product.service";
 
 const Container = styled.div``;
 
@@ -125,7 +125,7 @@ const Button = styled.button`
   }
 `;
 
-const Product = () => {
+const ProductPage = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
@@ -133,16 +133,18 @@ const Product = () => {
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
   const dispatch = useDispatch();
+  const { getProductById } = productService;
 
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await publicRequest.get("/products/find/" + id);
-        setProduct(res.data);
+        const { content } = await getProductById(id);
+        console.log("data_Product:", content);
+        setProduct(content);
       } catch {}
     };
     getProduct();
-  }, [id]);
+  }, [id, getProductById]);
 
   const handleQuantity = (type) => {
     if (type === "dec") {
@@ -201,4 +203,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductPage;

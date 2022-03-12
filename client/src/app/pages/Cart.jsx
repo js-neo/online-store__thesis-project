@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
+import { getCart } from "../store/cart";
 
 const Container = styled.div``;
 
@@ -163,7 +164,8 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector(getCart());
+  console.log("cart:", cart);
   return (
     <Container>
       <Navbar />
@@ -181,7 +183,7 @@ const Cart = () => {
         <Bottom>
           <Info>
             {cart.products.map((product) => (
-              <>
+              <div key={product._id}>
                 <Product>
                   <ProductDetail>
                     <Image src={product.image} />
@@ -213,7 +215,7 @@ const Cart = () => {
                   </PriceDetail>
                 </Product>
                 <Hr />
-              </>
+              </div>
             ))}
           </Info>
           <Summary>

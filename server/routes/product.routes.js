@@ -6,21 +6,6 @@ const {
 } = require("../middleware/auth.middleware");
 const Product = require("../models/Product");
 
-router.post("/", async (req, res) => {
-    try {
-        const newProduct = await Product.create({ ...req.body });
-        console.log("newProduct:", newProduct);
-        console.log("req.body", req.body);
-        const savedProduct = await newProduct.save();
-        res.send(savedProduct);
-    } catch (error) {
-        console.log("error:", error);
-        res.status(500).json({
-            message: "An error occurred on the server. Please try again later."
-        });
-    }
-});
-
 router.patch("/:productId", verifyAuthById, async (req, res) => {
     try {
         const { productId } = req.params;
@@ -53,7 +38,7 @@ router.delete("/:productId", verifyAuthById, async (req, res) => {
     }
 });
 
-router.get("/find/:productId", async (req, res) => {
+router.get("/:productId", async (req, res) => {
     try {
         const { productId } = req.params;
         const product = await Product.findById(productId);

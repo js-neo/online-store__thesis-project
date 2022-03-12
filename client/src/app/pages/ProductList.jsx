@@ -52,9 +52,10 @@ const ProductList = () => {
       [target.name]: value,
     }));
   };
-  console.log("filter:", filters);
+  console.log("filter_ProductList:", filters);
 
   const handleSort = ({ target }) => setSort(target.value);
+  console.log("sort_ProductList:", sort);
 
   return (
     <Container>

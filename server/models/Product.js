@@ -12,10 +12,10 @@ const schema = new Schema(
         },
         description: { type: String, required: true },
         image: String,
-        categories: { type: Array },
+        categories: [{ type: Schema.Types.ObjectId, ref: "Category" }],
         price: { type: Number, required: true },
-        size: { type: Array },
-        color: { type: Array },
+        sizes: [{ type: Schema.Types.ObjectId, ref: "Size" }],
+        colors: [{ type: Schema.Types.ObjectId, ref: "Color" }],
         inStock: { type: Boolean, default: true }
     },
     {

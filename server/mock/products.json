@@ -6,18 +6,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blue_dress_mini_cut.png?raw=true",
     "categories": [
-      "gucci",
-      "dress",
-      "mini"
+      "622cbd00b4f2dcb29561a654"
     ],
     "price": 50,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "blue",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66d",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -27,18 +25,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/girl_in_black_dress.png?raw=true",
     "categories": [
-      "dolce & gabbana",
-      "dress",
-      "mini"
+      "622cbd00b4f2dcb29561a654"
     ],
     "price": 40,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "black",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66b",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -48,18 +44,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/white_dress_mini.png?raw=true",
     "categories": [
-      "chanel",
-      "dress",
-      "mini"
+      "622cbd00b4f2dcb29561a654"
     ],
     "price": 70,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "white",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66a",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -69,18 +63,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/fluffy_white_dress_cut.png?raw=true",
     "categories": [
-      "Dior",
-      "dress",
-      "mini"
+      "622cbd00b4f2dcb29561a654"
     ],
     "price": 60,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "white",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66a",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -90,18 +82,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/pink_dress_mini.png?raw=true",
     "categories": [
-      "versace",
-      "jacket",
-      "mini"
+      "622cbd00b4f2dcb29561a655"
     ],
     "price": 80,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "pink",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66c",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -111,18 +101,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/gold_dress_mini.png?raw=true",
     "categories": [
-      "givenchy",
-      "dress",
-      "mini"
+      "622cbd00b4f2dcb29561a654"
     ],
     "price": 100,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "gold",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66e",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -132,18 +120,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/red_dress.png?raw=true",
     "categories": [
-      "louis vuitton",
-      "dress",
-      "sheath"
+      "622cbd00b4f2dcb29561a654"
     ],
     "price": 90,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "red",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66c",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -153,17 +139,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blouse_crema_white.png?raw=true",
     "categories": [
-      "dior",
-      "blouses"
+      "622cbd00b4f2dcb29561a656"
     ],
     "price": 20,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "white",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66a",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -173,17 +158,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blouse_dark_blue.png?raw=true",
     "categories": [
-      "gucci",
-      "blouses"
+      "622cbd00b4f2dcb29561a656"
     ],
     "price": 30,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "blue",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66d",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -193,17 +177,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/blouse_light_white_cut.png?raw=true",
     "categories": [
-      "chanel",
-      "blouses"
+      "622cbd00b4f2dcb29561a656"
     ],
     "price": 100,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "white",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66a",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -213,18 +196,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/jeans_shorts_cut.png?raw=true",
     "categories": [
-      "armani",
-      "jeans",
-      "shorts"
+      "622cbd00b4f2dcb29561a657"
     ],
     "price": 50,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "blue",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66d",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -234,18 +215,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/ripped_jeans.png?raw=true",
     "categories": [
-      "diesel",
-      "jeans",
-      "ripped"
+      "622cbd00b4f2dcb29561a657"
     ],
     "price": 100,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "blue",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66d",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -255,18 +234,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/denim_suit.png?raw=true",
     "categories": [
-      "diesel",
-      "jeans",
-      "denim suit"
+      "622cbd00b4f2dcb29561a657"
     ],
     "price": 80,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "blue",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66d",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -276,17 +253,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/pink_jacket_cut.png?raw=true",
     "categories": [
-      "chanel",
-      "jacket"
+      "622cbd00b4f2dcb29561a655"
     ],
     "price": 70,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "pink",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66c",
+      "622cbd00b4f2dcb29561a66f"
     ]
   },
   {
@@ -296,18 +272,16 @@
     "description": "test",
     "image": "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/product/jeans_jacket_blue.png?raw=true",
     "categories": [
-      "diesel",
-      "jeans",
-      "jacket"
+      "622cbd00b4f2dcb29561a657"
     ],
     "price": 130,
-    "size": [
-      "M",
-      "S"
+    "sizes": [
+      "622cbd00b4f2dcb29561a661",
+      "622cbd00b4f2dcb29561a660"
     ],
-    "color": [
-      "blue",
-      "grey"
+    "colors": [
+      "622cbd00b4f2dcb29561a66d",
+      "622cbd00b4f2dcb29561a66f"
     ]
   }
 ]
