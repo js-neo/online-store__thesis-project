@@ -8,8 +8,11 @@ import { Add, Remove } from "@material-ui/icons";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { addProduct } from "../store/cart";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import productService from "../services/product.service";
+import { getSizesLoadingStatus, getSizesByIds, getSizes } from "../store/sizes";
+import { getProductsLoadingStatus, getProductById } from "../store/products";
+import { getColorsLoadingStatus, getColorsByIds } from "../store/colors";
 
 const Container = styled.div``;
 
@@ -128,23 +131,21 @@ const Button = styled.button`
 const ProductPage = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
-  const [color, setColor] = useState("");
-  const [size, setSize] = useState("");
+  const [colors, setColors] = useState("");
+  const [sizes, setSizes] = useState("");
   const dispatch = useDispatch();
-  const { getProductById } = productService;
-
-  useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const { content } = await getProductById(id);
-        console.log("data_Product:", content);
-        setProduct(content);
-      } catch {}
-    };
-    getProduct();
-  }, [id, getProductById]);
+  // const { getProductById } = productService;
+  const isLoadingSizes = useSelector(getSizesLoadingStatus());
+  console.log("ID:", id);
+  const product = useSelector(getProductById(id));
+  console.log("product:", product);
+  console.log("sizes:", sizes);
+  console.log("product:", product);
+  const sizesList = useSelector(getSizes());
+  const sizesIdList = useSelector(getSizesByIds(product.sizes));
+  const colorsList = useSelector(getColorsByIds(product.colors));
+  console.log("colorList:", colorsList);
 
   const handleQuantity = (type) => {
     if (type === "dec") {
@@ -155,8 +156,11 @@ const ProductPage = () => {
   };
 
   const handleClick = () => {
-    dispatch(addProduct({ ...product, quantity, color, size }));
+    dispatch(addProduct({ ...product, quantity, colors, sizes }));
   };
+
+  if (isLoadingSizes) return "loading ...";
+  console.log("sizesList:", sizesList);
 
   return (
     <Container>
@@ -174,15 +178,19 @@ const ProductPage = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              {product.color?.map((c) => (
-                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+              {colorsList?.map((c) => (
+                <FilterColor
+                  color={c.name}
+                  key={c._id}
+                  onClick={() => setColors(c.name)}
+                />
               ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize onChange={(e) => setSize(e.target.value)}>
-                {product.size?.map((s) => (
-                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+              <FilterSize onChange={(e) => setSizes(e.target.value)}>
+                {sizesIdList?.map((s) => (
+                  <FilterSizeOption key={s._id}>{s.name}</FilterSizeOption>
                 ))}
               </FilterSize>
             </Filter>

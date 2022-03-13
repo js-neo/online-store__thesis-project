@@ -77,20 +77,10 @@ export const removeProduct = (productId) => async (dispatch) => {
 export const getProducts = () => (state) => state.products.entities;
 export const getProductsLoadingStatus = () => (state) =>
   state.products.isLoading;
-export const getProductsByIds = (productsIds) => (state) => {
+export const getProductById = (productId) => (state) => {
   if (state.products.entities) {
-    const productsArray = [];
-    for (const productId of productsIds) {
-      for (const product of state.products.entities) {
-        if (product._id === productId) {
-          productsArray.push(product);
-          break;
-        }
-      }
-    }
-    return productsArray;
+    return state.products.entities.find((p) => p._id === productId);
   }
-  return [];
 };
 
 export default productsReducer;

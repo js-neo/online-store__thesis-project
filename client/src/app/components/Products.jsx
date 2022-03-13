@@ -13,7 +13,12 @@ const Container = styled.div`
 `;
 
 const Products = ({ cat, filters, sort }) => {
-  console.log("Category, filters, sort:", cat, filters, sort);
+  console.log(
+    "___________Category, filters, sort________:",
+    cat,
+    filters,
+    sort
+  );
 
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -25,7 +30,7 @@ const Products = ({ cat, filters, sort }) => {
           ? await getProductsCategory(cat)
           : await fetchAll();
 
-        console.log("content:", content);
+        console.log("___CONTENT___:", content);
         setProducts(content);
       } catch (err) {}
     };

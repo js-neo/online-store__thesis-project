@@ -27,19 +27,22 @@ export const categories = [
     id: 1,
     img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/categories/girl_in_white_dress.jpg?raw=true",
     title: "HIGH FASHION!",
-    cat: "dress",
+    cat: "622cbd00b4f2dcb29561a654",
+    name: "dress",
   },
   {
     id: 2,
     img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/categories/devushka-dzhinsy.jpg?raw=true",
     title: "DAZZLING IMAGE",
-    cat: "blouses",
+    cat: "622cbd00b4f2dcb29561a656",
+    name: "blouses",
   },
   {
     id: 3,
     img: "https://github.com/Yupiter78/online-store__thesis-project/blob/main/client/src/assets/categories/girl_in_jeans.jpg?raw=true",
     title: "JEANS FOREVER",
-    cat: "jeans",
+    cat: "622cbd00b4f2dcb29561a657",
+    name: "jeans",
   },
 ];
 
