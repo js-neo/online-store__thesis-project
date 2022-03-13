@@ -9,7 +9,6 @@ const {
 
 router.post("/", auth, async (req, res) => {
     const newCart = await Cart.create({ ...req.body });
-    console.log("req.body", req.body);
     try {
         const savedCart = await newCart.save();
         res.send(savedCart);

@@ -13,7 +13,6 @@ router.patch("/:userId", verifyAuthById, async (req, res) => {
     }
     try {
         const { userId } = req.params;
-        console.log("req.user:", req.user);
 
         const updatedUser = await User.findByIdAndUpdate(userId, req.body, {
             new: true

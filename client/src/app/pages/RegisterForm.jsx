@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAuthErrors, signUp } from "../store/users";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -38,11 +39,6 @@ const Form = styled.form`
   flex-wrap: wrap;
 `;
 
-const Note = styled.span`
-  font-size: 20px;
-  margin: 20px 0;
-`;
-
 const Button = styled.button`
   border: none;
   padding: 15px 20px;
@@ -50,14 +46,6 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   font-size: 20px;
-`;
-
-const Link = styled.a`
-  margin: 5px 0;
-  font-size: 14px;
-  color: darkcyan;
-  text-decoration: underline;
-  cursor: pointer;
 `;
 
 const RegisterForm = () => {
@@ -167,9 +155,12 @@ const RegisterForm = () => {
             Submit
           </Button>
         </Form>
-        <Note>
-          Already have account? <Link>Sign In</Link>
-        </Note>
+        <p>
+          Already have account?{" "}
+          <Link to="/login" style={{ color: "darkcyan" }}>
+            Sign In
+          </Link>
+        </p>
       </Wrapper>
     </Container>
   );

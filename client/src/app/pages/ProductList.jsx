@@ -7,6 +7,8 @@ import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
+import { useSelector } from "react-redux";
+import { getCategories } from "../store/categories";
 
 const Container = styled.div``;
 
@@ -42,8 +44,15 @@ const Option = styled.option``;
 const ProductList = () => {
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
+  console.log("CAT_productList:", cat);
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState("newest");
+
+  const categoriesList = useSelector(getCategories());
+  console.log("categoriesList:", categoriesList);
+
+  const categoryById = categoriesList.find((catItem) => catItem._id === cat);
+  console.log("categoryById:", categoryById);
 
   const handleFilters = ({ target }) => {
     const value = target.value;
@@ -61,11 +70,11 @@ const ProductList = () => {
     <Container>
       <Navbar />
       <Announcement />
-      <Title>{cat}</Title>
+      <Title>{categoryById.name.toUpperCase()}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
-          <Select name="color" onChange={handleFilters}>
+          <Select name="colors" onChange={handleFilters}>
             <Option disabled>Color</Option>
             <Option>white</Option>
             <Option>black</Option>
@@ -74,7 +83,7 @@ const ProductList = () => {
             <Option>yellow</Option>
             <Option>green</Option>
           </Select>
-          <Select name="size" onChange={handleFilters}>
+          <Select name="sizes" onChange={handleFilters}>
             <Option disabled>Size</Option>
             <Option>XS</Option>
             <Option>S</Option>

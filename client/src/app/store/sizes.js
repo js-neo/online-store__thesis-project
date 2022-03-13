@@ -45,7 +45,7 @@ export const getSizesByIds = (sizesIds) => (state) => {
     for (const catId of sizesIds) {
       for (const size of state.sizes.entities) {
         if (size._id === catId) {
-          sizesArray.push(size);
+          sizesArray.push(size.name);
           break;
         }
       }

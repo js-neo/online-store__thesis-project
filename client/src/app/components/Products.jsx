@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Product from "./Product";
 import productService from "../services/product.service";
+import { useSelector } from "react-redux";
+import { getSizes, getSizesLoadingStatus } from "../store/sizes";
+import { getColors, getColorsLoadingStatus } from "../store/colors";
+import { getProducts } from "../store/products";
 
 const { fetchAll, getProductsCategory } = productService;
 
@@ -13,12 +17,13 @@ const Container = styled.div`
 `;
 
 const Products = ({ cat, filters, sort }) => {
-  console.log(
-    "___________Category, filters, sort________:",
-    cat,
-    filters,
-    sort
-  );
+  console.log("CAT_PRODUCTS:", cat);
+  const isLoadingSizes = useSelector(getSizesLoadingStatus());
+  const sizesList = useSelector(getSizes());
+  const isLoadingColors = useSelector(getColorsLoadingStatus());
+  // const product = useSelector(getProducts());
+
+  const colorList = useSelector(getColors());
 
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -29,8 +34,6 @@ const Products = ({ cat, filters, sort }) => {
         const { content } = cat
           ? await getProductsCategory(cat)
           : await fetchAll();
-
-        console.log("___CONTENT___:", content);
         setProducts(content);
       } catch (err) {}
     };
@@ -39,7 +42,6 @@ const Products = ({ cat, filters, sort }) => {
 
   function isEmpty(obj) {
     for (let key in obj) {
-      console.log("obj.hasOwnProperty(key):", obj.hasOwnProperty(key));
       if (obj.hasOwnProperty(key)) {
         return false;
       }
@@ -47,20 +49,45 @@ const Products = ({ cat, filters, sort }) => {
     return true;
   }
 
-  const productFilter = () => {
-    return products.filter((item) =>
-      Object.entries(filters).every(([key, value]) => item[key].includes(value))
-    );
+  // const transformData = (filter, dataList) => {
+  //   if (!isEmpty(filter)) {
+  //     const itemById = dataList.filter((item) =>
+  //       Object.entries(filter).every(([key, value]) => {
+  //         console.log("key, value", key, value);
+  //         return item.name.includes(value);
+  //       })
+  //     );
+  //     return itemById.map((item) => item._id);
+  //   }
+  // };
+
+  const transformData = (filters, dataList) => {
+    if (!isEmpty(filters)) {
+      const filterArray = Object.entries(filters);
+      return filterArray.reduce((obj, next) => {
+        const filterItem = dataList.find((item) => item.name === next[1]);
+        obj[next[0]] = filterItem._id;
+        return obj;
+      }, {});
+    }
   };
 
-  console.log("products:", products);
+  const filterId = transformData(filters, [...sizesList, ...colorList]);
+
+  const productFilter = () => {
+    if (filterId) {
+      return products.filter((item) =>
+        Object.entries(filterId).every(([key, value]) =>
+          item[key].includes(value)
+        )
+      );
+    }
+    return products;
+  };
+
   useEffect(() => {
-    console.log("isEmpty(filters):", isEmpty(filters));
-    console.log("filters:", filters);
     (cat || !isEmpty(filters)) && setFilteredProducts(productFilter());
   }, [products, cat, filters]);
-
-  console.log("filteredProducts:", filteredProducts);
 
   useEffect(() => {
     if (sort === "newest") {
@@ -68,24 +95,26 @@ const Products = ({ cat, filters, sort }) => {
         [...prev].sort((a, b) => a.createdAt - b.createdAt)
       );
     } else if (sort === "asc") {
-      console.log("ASK_FILTER");
       setFilteredProducts((prev) =>
         [...prev].sort((a, b) => a.price - b.price)
       );
     } else {
-      console.log("DESK_FILTER");
       setFilteredProducts((prev) =>
         [...prev].sort((a, b) => b.price - a.price)
       );
     }
   }, [sort]);
 
+  if (isLoadingSizes || isLoadingColors) {
+    return "LOADING...";
+  }
+
   return (
     <Container>
       {filteredProducts[0]
         ? filteredProducts.map((item) => <Product item={item} key={item._id} />)
         : products
-            .slice(0, 15)
+            .slice(0, 16)
             .map((item) => <Product item={item} key={item._id} />)}
     </Container>
   );

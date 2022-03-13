@@ -8,10 +8,45 @@ import TextAreaField from "../components/textAreaField";
 import { getColors } from "../store/colors";
 import { getSizes } from "../store/sizes";
 import { createProduct } from "../store/products";
+import styled from "styled-components";
+import { mobile } from "../responsive";
+
+const Container = styled.div`
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+      center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Wrapper = styled.div`
+  width: 40%;
+  padding: 20px;
+  background-color: white;
+  ${mobile({ width: "75%" })}
+`;
+
+const Title = styled.h1`
+  font-size: 24px;
+  font-weight: 300;
+`;
+
+const Button = styled.button`
+  border: none;
+  padding: 15px 20px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+`;
 
 const AdminPage = () => {
   console.log("ADMIN");
-  // const registerError = useSelector(getAuthErrors());
   const dispatch = useDispatch();
   const [data, setData] = useState({
     brand: "",
@@ -102,69 +137,74 @@ const AdminPage = () => {
   console.log("error_Admin:", errors);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        label="Brand"
-        name="brand"
-        value={data.brand}
-        onChange={handleChange}
-        error={errors.brand}
-      />
-      <TextField
-        label="Title"
-        name="title"
-        value={data.title}
-        onChange={handleChange}
-        error={errors.title}
-      />
-      <TextAreaField
-        value={data.description || ""}
-        onChange={handleChange}
-        name="description"
-        label="Description"
-        error={errors.description}
-      />
-      <TextField
-        label="Image"
-        name="image"
-        value={data.image}
-        onChange={handleChange}
-        error={errors.image}
-      />
-      <MultiSelectField
-        options={categoriesList}
-        onChange={handleChange}
-        name="categories"
-        label="Choose categories"
-      />
-      <TextField
-        label="Price"
-        name="price"
-        value={data.price}
-        onChange={handleChange}
-        error={errors.price}
-      />
-      <MultiSelectField
-        options={sizesList}
-        onChange={handleChange}
-        name="sizes"
-        label="Choose sizes"
-      />
-      <MultiSelectField
-        options={colorsList}
-        onChange={handleChange}
-        name="colors"
-        label="Choose colors"
-      />
-      {/*{registerError && <p className="text-danger">{registerError}</p>}*/}
-      <button
-        type="submit"
-        disabled={!isValid}
-        className="btn btn-primary w-100 mx-auto"
-      >
-        Submit
-      </button>
-    </form>
+    <Container>
+      <Wrapper>
+        <Title>ADDED PRODUCT</Title>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Brand"
+            name="brand"
+            value={data.brand}
+            onChange={handleChange}
+            error={errors.brand}
+          />
+          <TextField
+            label="Title"
+            name="title"
+            value={data.title}
+            onChange={handleChange}
+            error={errors.title}
+          />
+          <TextAreaField
+            value={data.description || ""}
+            onChange={handleChange}
+            name="description"
+            label="Description"
+            error={errors.description}
+          />
+          <TextField
+            label="Image"
+            name="image"
+            value={data.image}
+            onChange={handleChange}
+            error={errors.image}
+          />
+          <MultiSelectField
+            options={categoriesList}
+            onChange={handleChange}
+            name="categories"
+            label="Choose categories"
+          />
+          <TextField
+            label="Price"
+            name="price"
+            value={data.price}
+            onChange={handleChange}
+            error={errors.price}
+          />
+          <MultiSelectField
+            options={sizesList}
+            onChange={handleChange}
+            name="sizes"
+            label="Choose sizes"
+          />
+          <MultiSelectField
+            options={colorsList}
+            onChange={handleChange}
+            name="colors"
+            label="Choose colors"
+          />
+          {/*{registerError && <p className="text-danger">{registerError}</p>}*/}
+          <Button
+            type="submit"
+            disabled={!isValid}
+            className="btn w-100 mx-auto"
+          >
+            Submit
+          </Button>
+        </form>
+      </Wrapper>
+    </Container>
   );
 };
 

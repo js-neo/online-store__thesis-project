@@ -1,4 +1,3 @@
-import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -6,6 +5,10 @@ import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { getCart } from "../store/cart";
+import React from "react";
+import { getProductById } from "../store/products";
+import { getSizes, getSizesByIds } from "../store/sizes";
+import { getColors, getColorsByIds } from "../store/colors";
 
 const Container = styled.div``;
 
@@ -164,8 +167,21 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  // const [quantity, setQuantity] = useState(1);
   const cart = useSelector(getCart());
-  console.log("cart:", cart);
+  console.log("CARD.PRODUCTS", cart.products);
+  // const sizesList = useSelector(getSizes());
+  // const colorsList = useSelector(getColors());
+  //
+  // const handleQuantity = (type) => {
+  //   if (type === "dec") {
+  //     quantity > 1 && setQuantity(quantity - 1);
+  //   } else {
+  //     setQuantity(quantity + 1);
+  //   }
+  // };
+  // console.log("QUANTITY:", quantity);
+
   return (
     <Container>
       <Navbar />
@@ -197,17 +213,19 @@ const Cart = () => {
                       <ProductId>
                         <b>ID:</b> {product._id.slice(0, 12)}
                       </ProductId>
-                      <ProductColor color={product.color} />
-                      <ProductSize>
-                        <b>Size:</b> {product.size}
-                      </ProductSize>
+                      {product.colors.map((c) => (
+                        <ProductColor key={c} color={c} />
+                      ))}
+                      {product.sizes.map((s) => (
+                        <ProductSize key={s}>
+                          <b>Size:</b> {s}
+                        </ProductSize>
+                      ))}
                     </Details>
                   </ProductDetail>
                   <PriceDetail>
                     <ProductAmountContainer>
-                      <Add />
                       <ProductAmount>{product.quantity}</ProductAmount>
-                      <Remove />
                     </ProductAmountContainer>
                     <ProductPrice>
                       {product.price * product.quantity}

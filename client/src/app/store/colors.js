@@ -40,12 +40,13 @@ export const loadColorsList = () => async (dispatch, getState) => {
 export const getColors = () => (state) => state.colors.entities;
 export const getColorsLoadingStatus = () => (state) => state.colors.isLoading;
 export const getColorsByIds = (colorsIds) => (state) => {
-  if (state.colors.entities) {
+  console.log("colorsIds:", colorsIds);
+  if (state.colors?.entities) {
     const colorsArray = [];
     for (const catId of colorsIds) {
       for (const color of state.colors.entities) {
         if (color._id === catId) {
-          colorsArray.push(color);
+          colorsArray.push(color.name);
           break;
         }
       }

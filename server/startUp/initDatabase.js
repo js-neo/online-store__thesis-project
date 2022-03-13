@@ -13,7 +13,7 @@ const colorMock = require("../mock/colors.json");
 
 module.exports = async () => {
     const products = await Product.find();
-    if (products.length !== productMock.length) {
+    if (products.length < productMock.length) {
         await createInitialEntities(Product, productMock);
     }
     const categories = await Category.find();

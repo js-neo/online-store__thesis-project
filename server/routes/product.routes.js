@@ -53,12 +53,14 @@ router.get("/:productId", async (req, res) => {
 router.get("/", async (req, res) => {
     const queryNew = req.query.new;
     const queryCategory = req.query.category;
+    console.log("QueryCategory:", queryCategory);
     try {
         let products;
 
         if (queryNew) {
             products = await Product.find().sort({ createdAt: -1 }).limit(1);
         } else if (queryCategory) {
+            console.log("queryCategory:", queryCategory);
             products = await Product.find({
                 categories: {
                     $in: [queryCategory]

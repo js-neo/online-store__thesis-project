@@ -12,6 +12,7 @@ const Container = styled.div`
 `;
 
 const Categories = () => {
+  console.log("CATegories", categories);
   return (
     <Container>
       {categories.map((item) => (

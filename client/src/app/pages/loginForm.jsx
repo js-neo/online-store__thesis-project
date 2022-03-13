@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { validator } from "../utils/validator";
 import TextField from "../components/textField";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuthErrors, login } from "../store/users";
 import styled from "styled-components";
@@ -48,14 +48,6 @@ const Button = styled.button`
   cursor: pointer;
   margin-bottom: 10px;
   font-size: 20px;
-`;
-
-const Link = styled.a`
-  margin: 5px 0;
-  font-size: 14px;
-  color: darkcyan;
-  text-decoration: underline;
-  cursor: pointer;
 `;
 
 const LoginForm = () => {
@@ -144,7 +136,10 @@ const LoginForm = () => {
           </Button>
         </Form>
         <p>
-          Dont have account? <Link>Sign Up</Link>
+          Dont have account?{" "}
+          <Link to="/register" style={{ color: "darkcyan" }}>
+            Sign Up
+          </Link>
         </p>
       </Wrapper>
     </Container>

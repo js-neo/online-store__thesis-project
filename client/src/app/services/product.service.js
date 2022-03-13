@@ -13,12 +13,13 @@ const productService = {
     return data;
   },
   getProductsCategory: async (category) => {
+    console.log("GETPRODUCTSCATEGORY_START");
+    console.log("CATEGORY:", category);
     const { data } = await httpService.get(`products?category=${category}`);
+    console.log("DATA_CAtegory:", data);
     return data;
   },
   createProduct: async (payload) => {
-    console.log("payload:", payload);
-    console.log("payload._id:", payload._id);
     const { data } = await httpService.post(
       `${adminEndpoint}addProduct/`,
       payload

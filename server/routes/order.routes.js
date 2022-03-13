@@ -10,7 +10,6 @@ const {
 
 router.post("/", auth, async (req, res) => {
     const newOrder = await Order.create({ ...req.body });
-    console.log("req.body", req.body);
     try {
         const savedOrder = await newOrder.save();
         res.send(savedOrder);

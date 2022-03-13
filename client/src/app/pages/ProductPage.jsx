@@ -131,21 +131,17 @@ const Button = styled.button`
 const ProductPage = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  const [quantity, setQuantity] = useState(1);
-  const [colors, setColors] = useState("");
-  const [sizes, setSizes] = useState("");
-  const dispatch = useDispatch();
-  // const { getProductById } = productService;
-  const isLoadingSizes = useSelector(getSizesLoadingStatus());
-  console.log("ID:", id);
   const product = useSelector(getProductById(id));
-  console.log("product:", product);
-  console.log("sizes:", sizes);
-  console.log("product:", product);
-  const sizesList = useSelector(getSizes());
   const sizesIdList = useSelector(getSizesByIds(product.sizes));
+  console.log("sizesIdList:", sizesIdList);
   const colorsList = useSelector(getColorsByIds(product.colors));
-  console.log("colorList:", colorsList);
+  console.log("colorsList:", colorsList);
+
+  const [quantity, setQuantity] = useState(1);
+  const [colors, setColors] = useState(colorsList);
+  const [sizes, setSizes] = useState(sizesIdList);
+  const dispatch = useDispatch();
+  const isLoadingSizes = useSelector(getSizesLoadingStatus());
 
   const handleQuantity = (type) => {
     if (type === "dec") {
@@ -160,7 +156,6 @@ const ProductPage = () => {
   };
 
   if (isLoadingSizes) return "loading ...";
-  console.log("sizesList:", sizesList);
 
   return (
     <Container>
@@ -179,18 +174,14 @@ const ProductPage = () => {
             <Filter>
               <FilterTitle>Color</FilterTitle>
               {colorsList?.map((c) => (
-                <FilterColor
-                  color={c.name}
-                  key={c._id}
-                  onClick={() => setColors(c.name)}
-                />
+                <FilterColor color={c} key={c} onClick={() => setColors([c])} />
               ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize onChange={(e) => setSizes(e.target.value)}>
+              <FilterSize onChange={(e) => setSizes([e.target.value])}>
                 {sizesIdList?.map((s) => (
-                  <FilterSizeOption key={s._id}>{s.name}</FilterSizeOption>
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
                 ))}
               </FilterSize>
             </Filter>
