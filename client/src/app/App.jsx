@@ -1,10 +1,10 @@
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
 import ProductPage from "./pages/ProductPage";
-import LoginForm from "./pages/loginForm";
+import LoginForm from "./pages/LoginForm";
 import Cart from "./pages/Cart";
 import { Switch, Route, Redirect } from "react-router-dom";
-import RegisterForm from "./pages/registerForm";
+import RegisterForm from "./pages/RegisterForm";
 import AppLoader from "./components/ui/hoc/appLoader";
 import AdminPage from "./pages/AdminPage";
 
