@@ -11,12 +11,9 @@ const http = axios.create({
 
 http.interceptors.request.use(
   async function (config) {
-    console.log("config:", config);
     const expiresDate = localStorageService.getTokenExpiresDate();
     const refreshToken = localStorageService.getRefreshToken();
     const isExpired = refreshToken && expiresDate < Date.now();
-
-    console.log("Interceptor");
 
     if (isExpired) {
       const data = await authService.refresh();
@@ -47,7 +44,6 @@ http.interceptors.request.use(
 http.interceptors.response.use(
   (res) => {
     res.data = { content: res.data };
-    console.log("res:", res);
 
     return res;
   },
@@ -58,7 +54,6 @@ http.interceptors.response.use(
       error.response.status < 500;
 
     if (!expectedErrors) {
-      console.log("error:", error);
       toast.error("Something was wrong. Try it later");
     }
     return Promise.reject(error);

@@ -70,7 +70,6 @@ const Icon = styled.div`
 `;
 
 const Product = ({ item }) => {
-  console.log("iTEM:", item);
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(addProduct({ ...item }));

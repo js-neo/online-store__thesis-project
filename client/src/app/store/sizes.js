@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import isOutdated from "../utils/isOutdated";
 import sizeService from "../services/size.service";
 
 const sizesSlice = createSlice({
@@ -27,7 +26,7 @@ const sizesSlice = createSlice({
 const { reducer: sizesReducer, actions } = sizesSlice;
 const { sizesRequested, sizesReceved, sizesRequestFiled } = actions;
 
-export const loadSizesList = () => async (dispatch, getState) => {
+export const loadSizesList = () => async (dispatch) => {
   dispatch(sizesRequested());
   try {
     const { content } = await sizeService.fetchAll();

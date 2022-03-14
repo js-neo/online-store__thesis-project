@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import isOutdated from "../utils/isOutdated";
 import categoryService from "../services/category.service";
 
 const categoriesSlice = createSlice({
@@ -28,11 +27,10 @@ const { reducer: categoriesReducer, actions } = categoriesSlice;
 const { categoriesRequested, categoriesReceved, categoriesRequestFiled } =
   actions;
 
-export const loadCategoriesList = () => async (dispatch, getState) => {
+export const loadCategoriesList = () => async (dispatch) => {
   dispatch(categoriesRequested());
   try {
     const { content } = await categoryService.fetchAll();
-    console.log("content_Category:", content);
     dispatch(categoriesReceved(content));
   } catch (error) {
     dispatch(categoriesRequestFiled(error.message));
@@ -40,10 +38,8 @@ export const loadCategoriesList = () => async (dispatch, getState) => {
 };
 
 export const getCategories = () => (state) => {
-  console.log("state.categories.entities:", state.categories.entities);
   return state.categories.entities;
 };
-console.log("getCategories():", getCategories());
 export const getCategoriesLoadingStatus = () => (state) =>
   state.categories.isLoading;
 export const getCategoriesByIds = (categoriesIds) => (state) => {

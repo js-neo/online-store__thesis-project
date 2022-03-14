@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -9,10 +9,9 @@ import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { addProduct } from "../store/cart";
 import { useDispatch, useSelector } from "react-redux";
-import productService from "../services/product.service";
-import { getSizesLoadingStatus, getSizesByIds, getSizes } from "../store/sizes";
-import { getProductsLoadingStatus, getProductById } from "../store/products";
-import { getColorsLoadingStatus, getColorsByIds } from "../store/colors";
+import { getSizesLoadingStatus, getSizesByIds } from "../store/sizes";
+import { getProductById } from "../store/products";
+import { getColorsByIds } from "../store/colors";
 
 const Container = styled.div``;
 
@@ -133,9 +132,7 @@ const ProductPage = () => {
   const id = location.pathname.split("/")[2];
   const product = useSelector(getProductById(id));
   const sizesIdList = useSelector(getSizesByIds(product.sizes));
-  console.log("sizesIdList:", sizesIdList);
   const colorsList = useSelector(getColorsByIds(product.colors));
-  console.log("colorsList:", colorsList);
 
   const [quantity, setQuantity] = useState(1);
   const [colors, setColors] = useState(colorsList);

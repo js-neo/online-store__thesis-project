@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { loadCategoriesList } from "../../../store/categories";
 import { loadSizesList } from "../../../store/sizes";
@@ -23,10 +22,4 @@ const AppLoader = ({ children }) => {
   return children;
 };
 
-AppLoader.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
-};
 export default AppLoader;

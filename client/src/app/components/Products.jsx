@@ -5,7 +5,6 @@ import productService from "../services/product.service";
 import { useSelector } from "react-redux";
 import { getSizes, getSizesLoadingStatus } from "../store/sizes";
 import { getColors, getColorsLoadingStatus } from "../store/colors";
-import { getProducts } from "../store/products";
 
 const { fetchAll, getProductsCategory } = productService;
 
@@ -17,7 +16,6 @@ const Container = styled.div`
 `;
 
 const Products = ({ cat, filters, sort }) => {
-  console.log("CAT_PRODUCTS:", cat);
   const isLoadingSizes = useSelector(getSizesLoadingStatus());
   const sizesList = useSelector(getSizes());
   const isLoadingColors = useSelector(getColorsLoadingStatus());

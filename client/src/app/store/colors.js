@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import isOutdated from "../utils/isOutdated";
 import colorService from "../services/color.service";
 
 const colorsSlice = createSlice({
@@ -40,7 +39,6 @@ export const loadColorsList = () => async (dispatch, getState) => {
 export const getColors = () => (state) => state.colors.entities;
 export const getColorsLoadingStatus = () => (state) => state.colors.isLoading;
 export const getColorsByIds = (colorsIds) => (state) => {
-  console.log("colorsIds:", colorsIds);
   if (state.colors?.entities) {
     const colorsArray = [];
     for (const catId of colorsIds) {

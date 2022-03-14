@@ -6,9 +6,6 @@ import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { getCart } from "../store/cart";
 import React from "react";
-import { getProductById } from "../store/products";
-import { getSizes, getSizesByIds } from "../store/sizes";
-import { getColors, getColorsByIds } from "../store/colors";
 
 const Container = styled.div``;
 
@@ -167,20 +164,7 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
-  // const [quantity, setQuantity] = useState(1);
   const cart = useSelector(getCart());
-  console.log("CARD.PRODUCTS", cart.products);
-  // const sizesList = useSelector(getSizes());
-  // const colorsList = useSelector(getColors());
-  //
-  // const handleQuantity = (type) => {
-  //   if (type === "dec") {
-  //     quantity > 1 && setQuantity(quantity - 1);
-  //   } else {
-  //     setQuantity(quantity + 1);
-  //   }
-  // };
-  // console.log("QUANTITY:", quantity);
 
   return (
     <Container>
