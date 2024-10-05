@@ -65,7 +65,7 @@ const RegisterForm = () => {
       [target.name]: target.value,
     }));
   };
-  const validatorConfog = {
+  const validatorConfig = {
     email: {
       isRequired: {
         message: "Электронная почта обязательна для заполнения",
@@ -103,7 +103,7 @@ const RegisterForm = () => {
     validate();
   }, [data]);
   const validate = () => {
-    const errors = validator(data, validatorConfog);
+    const errors = validator(data, validatorConfig);
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };

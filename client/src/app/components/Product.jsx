@@ -4,7 +4,7 @@ import {
   FavoriteBorderOutlined,
   SearchOutlined,
   ShoppingCartOutlined,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { addProduct } from "../store/cart";
 import { useDispatch } from "react-redux";

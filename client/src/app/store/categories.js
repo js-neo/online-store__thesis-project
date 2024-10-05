@@ -12,7 +12,7 @@ const categoriesSlice = createSlice({
     categoriesRequested: (state) => {
       state.isLoading = true;
     },
-    categoriesReceved: (state, action) => {
+    categoriesReceived: (state, action) => {
       state.entities = action.payload;
       state.isLoading = false;
     },
@@ -24,14 +24,15 @@ const categoriesSlice = createSlice({
 });
 
 const { reducer: categoriesReducer, actions } = categoriesSlice;
-const { categoriesRequested, categoriesReceved, categoriesRequestFiled } =
+const { categoriesRequested, categoriesReceived, categoriesRequestFiled } =
   actions;
 
 export const loadCategoriesList = () => async (dispatch) => {
   dispatch(categoriesRequested());
   try {
     const { content } = await categoryService.fetchAll();
-    dispatch(categoriesReceved(content));
+    console.log("Loading categories list: ", content);
+    dispatch(categoriesReceived(content));
   } catch (error) {
     dispatch(categoriesRequestFiled(error.message));
   }

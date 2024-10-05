@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
+import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
 
@@ -41,7 +41,7 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 85vh;
   display: flex;
   align-items: center;
   background-color: #${(props) => props.bg};
@@ -84,6 +84,8 @@ const Button = styled.button`
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
+  console.log("slideIndex: ", slideIndex);
+  console.log("sliderItems: ", sliderItems);
   const handleClick = (direction) => {
     if (direction === "left") {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : sliderItems.length - 1);

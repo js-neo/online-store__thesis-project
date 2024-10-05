@@ -8,6 +8,7 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 
 const Home = () => {
+  console.log("Home");
   return (
     <>
       <Announcement />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { validator } from "../utils/validator";
 import TextField from "../components/textField";
 import MultiSelectField from "../components/multiSelectField";
@@ -89,7 +89,7 @@ const AdminPage = () => {
       [target.name]: target.value,
     }));
   };
-  const validatorConfog = {
+  const validatorConfig = {
     brand: {
       isRequired: {
         message: "Brand is Required",
@@ -102,27 +102,28 @@ const AdminPage = () => {
     },
     description: {
       isRequired: {
-        message: "Brand is Required",
+        message: "Description is Required",
       },
     },
     price: {
       isRequired: {
-        message: "Brand is Required",
+        message: "Price is Required",
       },
     },
   };
   useEffect(() => {
     validate();
   }, [data]);
-  const validate = () => {
+  const validate = useCallback(() => {
     console.log("data_Admin:", data);
-    const errors = validator(data, validatorConfog);
+    const errors = validator(data, validatorConfig);
     setErrors(errors);
     return Object.keys(errors).length === 0;
-  };
+  }, [data]);
+
   const isValid = Object.keys(errors).length === 0;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const isValid = validate();
     if (!isValid) return;
@@ -132,7 +133,12 @@ const AdminPage = () => {
       sizes: data.sizes.map((s) => s.value),
       colors: data.colors.map((c) => c.value),
     };
-    dispatch(createProduct(newData));
+    try {
+      const response = await dispatch(createProduct(newData));
+      console.log("Product created successfully:", response);
+    } catch (error) {
+      console.error("Error creating product:", error);
+    }
   };
   console.log("error_Admin:", errors);
 

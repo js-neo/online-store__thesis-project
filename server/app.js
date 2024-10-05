@@ -8,6 +8,8 @@ const initDatabase = require("./startUp/initDatabase");
 
 const app = express();
 
+mongoose.set('strictQuery', false);
+
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));

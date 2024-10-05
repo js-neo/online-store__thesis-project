@@ -5,6 +5,8 @@ import authService from "./auth.service";
 
 import localStorageService from "./localStorage.service";
 
+console.log("API Endpoint:", configFile.apiEndpoint);
+
 const http = axios.create({
   baseURL: configFile.apiEndpoint,
 });

@@ -4,7 +4,7 @@ import sizeService from "../services/size.service";
 const sizesSlice = createSlice({
   name: "sizes",
   initialState: {
-    entities: null,
+    entities: [],
     isLoading: true,
     error: null,
   },
@@ -12,7 +12,7 @@ const sizesSlice = createSlice({
     sizesRequested: (state) => {
       state.isLoading = true;
     },
-    sizesReceved: (state, action) => {
+    sizesReceived: (state, action) => {
       state.entities = action.payload;
       state.isLoading = false;
     },
@@ -24,13 +24,15 @@ const sizesSlice = createSlice({
 });
 
 const { reducer: sizesReducer, actions } = sizesSlice;
-const { sizesRequested, sizesReceved, sizesRequestFiled } = actions;
+const { sizesRequested, sizesReceived, sizesRequestFiled } = actions;
 
 export const loadSizesList = () => async (dispatch) => {
+  console.log("Loading sizes");
   dispatch(sizesRequested());
   try {
+    console.log("Fetching sizes");
     const { content } = await sizeService.fetchAll();
-    dispatch(sizesReceved(content));
+    dispatch(sizesReceived(content));
   } catch (error) {
     dispatch(sizesRequestFiled(error.message));
   }
@@ -39,19 +41,9 @@ export const loadSizesList = () => async (dispatch) => {
 export const getSizes = () => (state) => state.sizes.entities;
 export const getSizesLoadingStatus = () => (state) => state.sizes.isLoading;
 export const getSizesByIds = (sizesIds) => (state) => {
-  if (state.sizes.entities) {
-    const sizesArray = [];
-    for (const catId of sizesIds) {
-      for (const size of state.sizes.entities) {
-        if (size._id === catId) {
-          sizesArray.push(size.name);
-          break;
-        }
-      }
-    }
-    return sizesArray;
-  }
-  return [];
+  return state.sizes.entities
+    .filter((size) => sizesIds.includes(size._id))
+    .map((size) => size.name);
 };
 
 export default sizesReducer;

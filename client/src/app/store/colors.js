@@ -4,7 +4,7 @@ import colorService from "../services/color.service";
 const colorsSlice = createSlice({
   name: "colors",
   initialState: {
-    entities: null,
+    entities: [],
     isLoading: true,
     error: null,
   },

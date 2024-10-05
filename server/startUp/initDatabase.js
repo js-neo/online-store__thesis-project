@@ -1,6 +1,3 @@
-// 1. У любого пользователя будет как минимум в БД qualities & products
-// 2. Они равны mock данным
-
 const Product = require("../models/Product");
 const Category = require("../models/Category");
 const Size = require("../models/Size");

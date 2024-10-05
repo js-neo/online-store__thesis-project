@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import styled from "styled-components";
 import Product from "./Product";
 import productService from "../services/product.service";
-import { useSelector } from "react-redux";
 import { getSizes, getSizesLoadingStatus } from "../store/sizes";
 import { getColors, getColorsLoadingStatus } from "../store/colors";
+import { useSelector } from "react-redux";
 
 const { fetchAll, getProductsCategory } = productService;
 
@@ -15,16 +15,13 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const Products = ({ cat, filters, sort }) => {
+const Products = ({ cat, filters = {}, sort }) => {
   const isLoadingSizes = useSelector(getSizesLoadingStatus());
   const sizesList = useSelector(getSizes());
   const isLoadingColors = useSelector(getColorsLoadingStatus());
-  // const product = useSelector(getProducts());
-
   const colorList = useSelector(getColors());
 
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -33,87 +30,60 @@ const Products = ({ cat, filters, sort }) => {
           ? await getProductsCategory(cat)
           : await fetchAll();
         setProducts(content);
-      } catch (err) {}
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      }
     };
     getProducts();
   }, [cat]);
 
-  function isEmpty(obj) {
-    for (let key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  // const transformData = (filter, dataList) => {
-  //   if (!isEmpty(filter)) {
-  //     const itemById = dataList.filter((item) =>
-  //       Object.entries(filter).every(([key, value]) => {
-  //         console.log("key, value", key, value);
-  //         return item.name.includes(value);
-  //       })
-  //     );
-  //     return itemById.map((item) => item._id);
-  //   }
-  // };
+  const isEmpty = (obj) => !obj || Object.keys(obj).length === 0;
 
   const transformData = (filters, dataList) => {
-    if (!isEmpty(filters)) {
-      const filterArray = Object.entries(filters);
-      return filterArray.reduce((obj, next) => {
-        const filterItem = dataList.find((item) => item.name === next[1]);
-        obj[next[0]] = filterItem._id;
-        return obj;
-      }, {});
-    }
+    if (isEmpty(filters)) return {};
+    return Object.entries(filters).reduce((obj, [key, value]) => {
+      const filterItem = dataList.find((item) => item.name === value);
+      if (filterItem) obj[key] = filterItem._id;
+      return obj;
+    }, {});
   };
 
   const filterId = transformData(filters, [...sizesList, ...colorList]);
 
-  const productFilter = () => {
-    if (filterId) {
-      return products.filter((item) =>
-        Object.entries(filterId).every(([key, value]) =>
-          item[key].includes(value)
-        )
-      );
-    }
-    return products;
-  };
+  const filteredProducts = useMemo(() => {
+    if (isEmpty(filterId)) return products;
 
-  useEffect(() => {
-    (cat || !isEmpty(filters)) && setFilteredProducts(productFilter());
-  }, [products, cat, filters]);
+    return products.filter((item) =>
+      Object.entries(filterId).every(([key, value]) =>
+        item[key]?.includes(value)
+      )
+    );
+  }, [products, filterId]);
 
-  useEffect(() => {
+  const sortedProducts = useMemo(() => {
+    const sortedArray = [...filteredProducts];
     if (sort === "newest") {
-      setFilteredProducts((prev) =>
-        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+      return sortedArray.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
     } else if (sort === "asc") {
-      setFilteredProducts((prev) =>
-        [...prev].sort((a, b) => a.price - b.price)
-      );
+      return sortedArray.sort((a, b) => a.price - b.price);
     } else {
-      setFilteredProducts((prev) =>
-        [...prev].sort((a, b) => b.price - a.price)
-      );
+      return sortedArray.sort((a, b) => b.price - a.price);
     }
-  }, [sort]);
+  }, [filteredProducts, sort]);
 
   if (isLoadingSizes || isLoadingColors) {
-    return "LOADING...";
+    return <div>LOADING...</div>;
   }
 
   return (
     <Container>
-      {filteredProducts[0]
-        ? filteredProducts.map((item) => <Product item={item} key={item._id} />)
-        : products
-            .slice(0, 16)
-            .map((item) => <Product item={item} key={item._id} />)}
+      {filteredProducts.length > 0 ? (
+        sortedProducts.map((item) => <Product item={item} key={item._id} />)
+      ) : (
+        <div>There are no products matching your requests</div>
+      )}
     </Container>
   );
 };

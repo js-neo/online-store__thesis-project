@@ -11,14 +11,25 @@ import {
 const AppLoader = ({ children }) => {
   const dispatch = useDispatch();
   const productsStatusLoading = useSelector(getProductsLoadingStatus());
-  useEffect(() => {
-    dispatch(loadCategoriesList());
-    dispatch(loadSizesList());
-    dispatch(loadColorsList());
-    dispatch(loadProductsList());
-  }, []);
 
-  if (productsStatusLoading) return "loading";
+  useEffect(() => {
+    const loadData = async () => {
+      console.log("Loading data...");
+      try {
+        await dispatch(loadProductsList());
+        await dispatch(loadCategoriesList());
+        await dispatch(loadSizesList());
+        await dispatch(loadColorsList());
+      } catch (error) {
+        console.error("Error loading data:", error);
+      }
+    };
+
+    loadData();
+  }, [dispatch]);
+
+  if (productsStatusLoading) return "Loading dispatch...";
+
   return children;
 };
 

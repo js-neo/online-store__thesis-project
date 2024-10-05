@@ -1,10 +1,15 @@
 import React from "react";
-import styled from "styled-components";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
-import { Badge } from "@material-ui/core";
+
+import { Search, ShoppingCartOutlined } from "@mui/icons-material";
+import { Badge } from "@mui/material";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const Container = styled.div`
   height: 80px;
@@ -95,15 +100,15 @@ const Navbar = () => {
           <Logo>Lady SHOP</Logo>
         </Center>
         <Right>
-          <Link to="/register">
+          <StyledLink to="/register">
             <MenuItem>REGISTER</MenuItem>
-          </Link>
-          <Link to="/login">
+          </StyledLink>
+          <StyledLink to="/login">
             <MenuItem>SIGN IN</MenuItem>
-          </Link>
-          <Link to="/admin/addProduct">
+          </StyledLink>
+          <StyledLink to="/admin/addProduct">
             <MenuItem>ADMIN</MenuItem>
-          </Link>
+          </StyledLink>
           <Link to="/cart">
             <MenuItem>
               <Badge badgeContent={quantity} color="primary">

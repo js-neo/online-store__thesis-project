@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { VisibilityOffOutlined, VisibilityOutlined } from "@material-ui/icons";
+import { VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material";
 
 const TextField = ({ label, type, name, value, onChange, error }) => {
   const [showPassword, setShowPassword] = useState(false);
